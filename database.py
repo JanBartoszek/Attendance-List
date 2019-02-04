@@ -25,16 +25,20 @@ def disconnect():
 
 
 def insert(pylighter_input):
+    """
+    input for dropping a table:
+    xxxxxxxxx'); DROP TABLE attendance; --
+    """
     cur.execute('''
-    INSERT INTO attendance (name) VALUES (%s);
-    ''', (pylighter_input,))
+    INSERT INTO attendance (name) VALUES ('%s');
+    ''' % pylighter_input)
 
 
 def delete(pylighter_input):
     cur.execute('''
     DELETE FROM attendance
-    WHERE id = %s;
-    ''', (pylighter_input,))
+    WHERE id = '%s';
+    ''' % pylighter_input)
 
 
 def select():
