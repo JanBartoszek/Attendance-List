@@ -7,20 +7,20 @@ import database
 
 
 def show_pylighters():
-    selected_stuff = database.select()
-    return selected_stuff
+    present_pylighters = database.select()
+    return present_pylighters
 
 
 def add_pylighter():
     database.insert(input('Insert new pylighter...'))
-    selected_stuff = database.select()
-    return selected_stuff
+    present_pylighters = database.select()
+    return present_pylighters
 
 
 def remove_pylighter():
     database.delete(input('Remove desired pylighter...'))
-    selected_stuff = database.select()
-    return selected_stuff
+    present_pylighters = database.select()
+    return present_pylighters
 
 
 def surprise_tool():
@@ -37,7 +37,7 @@ def quit_app():
 
 def wrong_input_handling():
     os.system('clear')
-    view.print_if_wrong()
+    view.print_wrong_input_alert()
 
 
 def handle_chosen_option(option):
@@ -56,7 +56,7 @@ def start():
     app_running = True
     while app_running:
         view.print_options()
-        chosen_option = view.choose_option()
+        chosen_option = input("Choose... ")
         handled_chosen_option = handle_chosen_option(chosen_option)
         os.system('clear')
         if handled_chosen_option:

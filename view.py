@@ -22,9 +22,6 @@ def zero_attendance():
     print("\nNo one's here! \n")
 
 
-def print_if_wrong():
+def print_wrong_input_alert():
     print("\nSomething went wrong... \n")
 
-
-def choose_option():
-    return input("Choose... ")

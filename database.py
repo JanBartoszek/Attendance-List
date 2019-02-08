@@ -40,8 +40,8 @@ def select(cur):
     cur.execute('''
     SELECT id, name, ROW_NUMBER () OVER (ORDER BY id) FROM attendance;
     ''')
-    stuff = cur.fetchall()
-    return stuff
+    present_pylighters = cur.fetchall()
+    return present_pylighters
 
 
 @database_handler
