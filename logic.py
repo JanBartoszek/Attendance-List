@@ -1,6 +1,5 @@
 import sys
 import os
-import psycopg2
 
 import view
 import database
@@ -24,14 +23,15 @@ def remove_pylighter():
 
 
 def surprise_tool():
-    try:
-        database.create_table()
-    except psycopg2.ProgrammingError:
+    if database.check_if_attendance_table_exists().get("exists"):
         database.drop_table()
+        database.create_table()
+    else:
         database.create_table()
 
 
 def quit_app():
+    database.disconnect()
     sys.exit(0)
 
 
@@ -53,6 +53,7 @@ def handle_chosen_option(option):
 
 def start():
     view.print_welcome()
+    database.connect()
     app_running = True
     while app_running:
         view.print_options()
