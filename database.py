@@ -16,7 +16,7 @@ def connect():
         password=os.environ.get("PASSWORD")
     ))
     conn.autocommit = True
-    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
 
 def disconnect():
