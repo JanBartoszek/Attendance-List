@@ -1,4 +1,8 @@
+import os
+
+
 def print_welcome():
+    os.system('clear')
     print('\nHello! Welcome to our very advanced attendance list app.\n')
 
 

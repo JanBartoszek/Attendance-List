@@ -11,13 +11,13 @@ def show_pylighters():
 
 
 def add_pylighter():
-    database.insert(input('Insert new pylighter...'))
+    database.insert(input('Insert new pylighter... '))
     present_pylighters = database.select()
     return present_pylighters
 
 
 def remove_pylighter():
-    database.delete(input('Remove desired pylighter...'))
+    database.delete(input('Remove desired pylighter... '))
     present_pylighters = database.select()
     return present_pylighters
 
@@ -36,8 +36,7 @@ def quit_app():
 
 
 def wrong_input_handling():
-    os.system('clear')
-    view.print_wrong_input_alert()
+    return False
 
 
 def handle_chosen_option(option):
@@ -62,8 +61,10 @@ def start():
         os.system('clear')
         if handled_chosen_option:
             view.print_results(handled_chosen_option)
-        else:
+        elif handled_chosen_option == []:
             view.zero_attendance()
+        else:
+            view.print_wrong_input_alert()
 
 
 start()
