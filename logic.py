@@ -12,14 +12,12 @@ def show_pylighters():
 
 def add_pylighter():
     database.insert(input('Insert new pylighter... '))
-    present_pylighters = database.select()
-    return present_pylighters
+    return show_pylighters()
 
 
 def remove_pylighter():
-    database.delete(input('Remove desired pylighter... '))
-    present_pylighters = database.select()
-    return present_pylighters
+    database.delete(input('Remove desired pylighter(provide id)... '))
+    return show_pylighters()
 
 
 def surprise_tool():
