@@ -1,7 +1,7 @@
 # Attendance-List
 
 This is a simple terminal-based app for checking the attendance. 
-The project was created for presentation on Pylight: Python-oriented meetup for begginers.
+The project was created for Pylight: Python-oriented meetup for begginers.
 The main goal is to show how to establish a connection with PostgreSQL database using Psycopg2. 
 
 ## What is needed
