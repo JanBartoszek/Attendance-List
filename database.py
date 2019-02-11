@@ -8,41 +8,53 @@ cur = None
 
 
 def connect():
-    global conn, cur
-    conn = psycopg2.connect("dbname={dbname} user={user} password={password} host={host}".format(
-        dbname=os.environ.get("ATTENDANCE_LIST_DBNAME"),
-        user=os.environ.get("ATTENDANCE_LIST_USER"),
-        host=os.environ.get("ATTENDANCE_LIST_HOST"),
-        password=os.environ.get("ATTENDANCE_LIST_PASSWORD")
-    ))
-    conn.autocommit = True
-    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    pass
 
 
 def disconnect():
-    cur.close()
-    conn.close()
+    pass
 
 
 def select():
-    cur.execute('''
-    SELECT id, name, ROW_NUMBER () OVER (ORDER BY id) FROM attendance;
-    ''')
-    present_pylighters = cur.fetchall()
-    return present_pylighters
+    pass
 
 
 def insert(pylighter_input):
-    cur.execute('''
-    INSERT INTO attendance (name) VALUES (%s);
-    ''', (pylighter_input,))
+    pass
 
 
 def delete(pylighter_input):
-    cur.execute('''
-    DELETE FROM attendance
-    WHERE id = %s;
-    ''', (pylighter_input,))
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def create_table():
